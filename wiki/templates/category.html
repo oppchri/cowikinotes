@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<container>
+    <h2>Pages available in category "{{selected_category.label|safe}}":</h2>
+    {% for page in page_list %}
+    <a href="/page/{{page.name}}/">
+        <div class="card m-3 mx-auto">
+            <div class="card-body">
+                <p class="card-title">
+                    {{page.name}}
+                </p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</container>
+{% endblock content %}

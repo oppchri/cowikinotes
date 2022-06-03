@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{page.name|safe}}</h2>
+<p>{{page.description|safe}}</p>
+{% for subpage in subpages %}
+<button type="button" class="collapsible"><p>{{subpage.name}}</p></button>
+<div class="content">
+    <p>{{subpage.content|safe}}</p>
+    <p class="info">Author: {{subpage.author}}, Date Published: {{subpage.date_published|date:'Y-m-d'}}, Date Modified: {{subpage.date_modified|date:'Y-m-d'}}</p>
+</div>
+{% endfor %}
+{% endblock content %}
